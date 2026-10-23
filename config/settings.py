@@ -17,14 +17,14 @@ SECRET_KEY = os.getenv(
 # लाइभ जाँदा Render को Environment Variable मा DJANGO_DEBUG लाई False राख्नुहोला
 DEBUG = os.getenv("DJANGO_DEBUG", "True").lower() == "true"
 
+# settings.py भित्र खोजेर ALLOWED_HOSTS लाई यसरी परिवर्तन गर्नुहोस्:
+
 ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.getenv(
-        "DJANGO_ALLOWED_HOSTS",
-        "127.0.0.1,localhost"
-    ).split(",")
-    if host.strip()
+    '127.0.0.1',
+    'localhost',
+    'my-portfolio2-crf3.onrender.com',  # 👈 तपाईंको अनलाइन लिङ्क यहाँ सिधै थपिएको छ
 ]
+
 
 # Installed applications
 INSTALLED_APPS = [
