@@ -77,6 +77,8 @@ WSGI_APPLICATION = "config.wsgi.application"
 ASGI_APPLICATION = "config.asgi.application"
 
 # MongoDB database configuration (Render मा MONGODB_URI र MONGODB_NAME थप्नुपर्छ)
+# settings.py भित्र खोजेर DATABASES ब्लकलाई यसरी पूर्ण रूपमा अपडेट गर्नुहोस्:
+
 DATABASES = {
     "default": {
         "ENGINE": "django_mongodb_backend",
@@ -88,8 +90,16 @@ DATABASES = {
             "MONGODB_NAME",
             "bikash_portfolio"
         ),
+        # Render को फ्री र्याममा थ्रेड लक हुन नदिन यी सेटिङहरू थपिएका हुन्
+        "OPTIONS": {
+            "serverSelectionTimeoutMS": 5000,  # ५ सेकेन्डमै टाइमआउट गराउने (थ्रेड अड्किन नदिने)
+            "connectTimeoutMS": 5000,
+            "socketTimeoutMS": 5000,
+            "retryWrites": True,
+        }
     }
 }
+
 
 # MongoDB-compatible migrations for Django built-in apps
 MIGRATION_MODULES = {
