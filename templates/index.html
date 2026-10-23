@@ -1,0 +1,938 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% if site %}{{ site.name }}{% else %}Bikash Belbase{% endif %} | Education Consultant</title>
+
+    <meta name="description" content="Bikash Belbase, Education Consultant at Oasis Education Group, helping students plan their study-abroad journey with confidence.">
+    <meta name="theme-color" content="#071a33">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="header" id="home">
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+            <span class="logo-mark">BB</span>
+            <span class="logo-text">
+                <strong>
+                    {% if site %}{{ site.name }}{% else %}Bikash Belbase{% endif %}
+                </strong>
+                <small>
+                    {% if site %}{{ site.position }}{% else %}Education Consultant{% endif %}
+                </small>
+            </span>
+        </a>
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navbar">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#experience">Experience</a>
+            <a href="#success">Success Stories</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact" class="nav-cta">Contact Me</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                <i class="fas fa-graduation-cap"></i>
+                Your Future Starts Here
+            </span>
+
+            <h1>
+                Plan Your Future<br>
+                <span>With Confidence.</span>
+            </h1>
+
+            <p class="hero-description">
+                Hello, I'm
+                <strong>
+                    {% if site %}{{ site.name }}{% else %}Bikash Belbase{% endif %}
+                </strong>,
+                an education consultant dedicated to helping students explore
+                international education opportunities and make informed decisions
+                about their futures.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    Book a Consultation
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    Discover My Journey
+                </a>
+            </div>
+
+            <div class="hero-trust">
+                <div class="trust-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <p>Personal guidance. Clear advice. Confident decisions.</p>
+            </div>
+
+        </div>
+
+        <!-- PROFILE PHOTO -->
+        <div class="hero-visual">
+            <div class="photo-frame">
+
+                {% if site and site.profile_image %}
+                    <img
+                        src="{{ site.profile_image.url }}"
+                        alt="{{ site.name }}"
+                        class="profile-photo">
+                {% else %}
+                    <img
+                        src="{% static 'images/bikki.jpg' %}"
+                        alt="Bikash Belbase - Education Consultant"
+                        class="profile-photo">
+                {% endif %}
+
+                <div class="photo-caption">
+                    <span class="caption-line"></span>
+
+                    <div>
+                        <strong>
+                            {% if site %}{{ site.name }}{% else %}Bikash Belbase{% endif %}
+                        </strong>
+
+                        <small>
+                            {% if site %}{{ site.position }}{% else %}Education Consultant{% endif %}
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="floating-card">
+                <span class="floating-icon">
+                    <i class="fas fa-star"></i>
+                </span>
+
+                <div>
+                    <strong>Your goals matter.</strong>
+                    <small>Let's plan your next step.</small>
+                </div>
+            </div>
+
+            <div class="hero-decoration decoration-one"></div>
+            <div class="hero-decoration decoration-two"></div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= ABOUT SECTION ================= -->
+<section class="section about-section" id="about">
+    <div class="container about-grid">
+
+        <div class="about-label">
+            <span class="section-tag">ABOUT ME</span>
+
+            <h2>Guiding Students Toward a Brighter Future</h2>
+
+            <div class="about-highlight">
+                <i class="fas fa-quote-left"></i>
+                <p>
+                    Every student's dream deserves a thoughtful plan,
+                    the right guidance, and an opportunity to grow.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-content">
+
+            {% if site and site.about %}
+                <div>{{ site.about|linebreaksbr }}</div>
+            {% else %}
+                <p>
+                    I am Bikash Belbase, an Education Consultant passionate
+                    about supporting students as they explore opportunities
+                    for higher education abroad. My goal is to help students
+                    understand their options, prepare effectively, and make
+                    decisions that align with their academic ambitions.
+                </p>
+            {% endif %}
+
+            <p>
+                From selecting a suitable course and institution to preparing
+                application documents, I believe reliable information and
+                personalized support can make the journey easier.
+            </p>
+
+            {% if site and site.experience %}
+                <p>{{ site.experience|linebreaksbr }}</p>
+            {% endif %}
+
+            <div class="about-points">
+                <div class="about-point">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Student-focused guidance</span>
+                </div>
+
+                <div class="about-point">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Personalized study planning</span>
+                </div>
+
+                <div class="about-point">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Transparent information</span>
+                </div>
+
+                <div class="about-point">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Support throughout the process</span>
+                </div>
+            </div>
+
+            <a href="#contact" class="text-link">
+                Let's discuss your plans
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= SERVICES SECTION ================= -->
+<section class="section services-section" id="services">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">WHAT I DO</span>
+            <h2>Services to Support Your Journey</h2>
+            <p>
+                Get guidance at every important stage of your international
+                education planning.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            {% for service in services %}
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        {% if service.icon %}
+                            <i class="{{ service.icon }}"></i>
+                        {% else %}
+                            <i class="fas fa-graduation-cap"></i>
+                        {% endif %}
+                    </div>
+
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.description|linebreaksbr }}</p>
+
+                </article>
+            {% empty %}
+                <article class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Course and University Selection</h3>
+                    <p>
+                        Explore courses and institutions that suit your
+                        academic background and career goals.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Application Guidance</h3>
+                    <p>
+                        Understand application requirements and prepare
+                        your supporting documents.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Visa Documentation Guidance</h3>
+                    <p>
+                        Learn about document preparation and the general
+                        student visa application process.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Student Consultation</h3>
+                    <p>
+                        Discuss your study plans and receive guidance
+                        tailored to your individual circumstances.
+                    </p>
+                </article>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= DESTINATIONS SECTION ================= -->
+<section class="section destinations-section" id="destinations">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">STUDY ABROAD</span>
+            <h2>Explore Your Study Destinations</h2>
+            <p>
+                Discover international education opportunities and find
+                the destination that fits your goals.
+            </p>
+        </div>
+
+        <div class="destinations-grid">
+
+            {% for destination in destinations %}
+                <article class="destination-card">
+
+                    {% if destination.image_url %}
+                        <img
+                            src="{{ destination.image_url }}"
+                            alt="{{ destination.name }}"
+                            class="destination-image"
+                            loading="lazy">
+                    {% endif %}
+
+                    <div class="destination-content">
+                        <span class="destination-number">
+                            Destination {{ forloop.counter|stringformat:"02d" }}
+                        </span>
+
+                        <h3>{{ destination.name }}</h3>
+
+                        {% if destination.description %}
+                            <p>{{ destination.description|linebreaksbr }}</p>
+                        {% endif %}
+
+                        <a href="#contact" class="text-link">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </article>
+            {% empty %}
+                <article class="destination-card">
+                    <div class="destination-content">
+                        <span class="destination-number">01</span>
+                        <h3>Australia</h3>
+                        <p>
+                            Explore universities, vocational education,
+                            and other study opportunities in Australia.
+                        </p>
+                        <a href="#contact" class="text-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <div class="destination-content">
+                        <span class="destination-number">02</span>
+                        <h3>United Kingdom</h3>
+                        <p>
+                            Learn about courses and higher education
+                            pathways available in the UK.
+                        </p>
+                        <a href="#contact" class="text-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="destination-card">
+                    <div class="destination-content">
+                        <span class="destination-number">03</span>
+                        <h3>Canada</h3>
+                        <p>
+                            Explore Canadian institutions and education
+                            options suited to your academic plans.
+                        </p>
+                        <a href="#contact" class="text-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= EXPERIENCE SECTION ================= -->
+<section class="section experience-section" id="experience">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">MY JOURNEY</span>
+            <h2>Experience and Professional Growth</h2>
+            <p>
+                Professional experiences that contribute to my commitment
+                to student guidance and education.
+            </p>
+        </div>
+
+        <div class="timeline">
+
+            {% for experience in experiences %}
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+
+                    <div class="timeline-card">
+
+                        <span class="timeline-date">
+                            {{ experience.start_year }}
+                            –
+                            {% if experience.is_current %}
+                                Present
+                            {% elif experience.end_year %}
+                                {{ experience.end_year }}
+                            {% else %}
+                                Present
+                            {% endif %}
+                        </span>
+
+                        <h3>{{ experience.position }}</h3>
+                        <h4>{{ experience.organization }}</h4>
+
+                        {% if experience.description %}
+                            <p>{{ experience.description|linebreaksbr }}</p>
+                        {% endif %}
+
+                    </div>
+                </article>
+            {% empty %}
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+
+                    <div class="timeline-card">
+                        <span class="timeline-date">Professional Journey</span>
+                        <h3>Education Consultant</h3>
+                        <h4>Oasis Education Group</h4>
+                        <p>
+                            Supporting students with education planning,
+                            course selection, application preparation,
+                            and study-abroad guidance.
+                        </p>
+                    </div>
+                </article>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= SUCCESS STORIES SECTION ================= -->
+<section class="section success-section" id="success">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">STUDENT ACHIEVEMENTS</span>
+            <h2>Success Stories</h2>
+            <p>
+                Every student's journey is unique. Celebrate achievements
+                and milestones along the way.
+            </p>
+        </div>
+
+        <div class="success-grid">
+
+            {% for story in success_stories %}
+                <article class="success-card">
+
+                    {% if story.image_url %}
+                        <img
+                            src="{{ story.image_url }}"
+                            alt="{{ story.student_name }}"
+                            class="success-image"
+                            loading="lazy">
+                    {% endif %}
+
+                    <div class="success-content">
+
+                        <span class="success-label">
+                            <i class="fas fa-award"></i>
+                            Student Achievement
+                        </span>
+
+                        <h3>{{ story.student_name }}</h3>
+
+                        {% if story.destination %}
+                            <p class="student-name">
+                                Destination: {{ story.destination }}
+                            </p>
+                        {% endif %}
+
+                        {% if story.university %}
+                            <p>{{ story.university }}</p>
+                        {% endif %}
+
+                        <p>{{ story.story|linebreaksbr }}</p>
+
+                    </div>
+                </article>
+            {% empty %}
+                <article class="success-card">
+                    <div class="success-content">
+                        <span class="success-label">
+                            <i class="fas fa-award"></i>
+                            Student Achievement
+                        </span>
+
+                        <h3>Every Dream Has a Beginning</h3>
+
+                        <p>
+                            With thoughtful planning and the right
+                            information, students can take meaningful
+                            steps toward their education goals.
+                        </p>
+                    </div>
+                </article>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= TESTIMONIALS SECTION ================= -->
+<section class="section testimonials-section" id="testimonials">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">STUDENT FEEDBACK</span>
+            <h2>What Students Say</h2>
+            <p>
+                Feedback and experiences shared by students I have supported.
+            </p>
+        </div>
+
+        <div class="testimonials-grid">
+
+            {% for testimonial in testimonials %}
+                <article class="testimonial-card">
+
+                    <div class="testimonial-stars"
+                         aria-label="5 out of 5 stars">
+                        {% for star in "12345" %}
+                            <i class="fas fa-star"></i>
+                        {% endfor %}
+                    </div>
+
+                    <i class="fas fa-quote-left testimonial-quote"></i>
+
+                    <p>{{ testimonial.message|linebreaksbr }}</p>
+
+                    <div class="testimonial-author">
+
+                        {% if testimonial.photo_url %}
+                            <img
+                                src="{{ testimonial.photo_url }}"
+                                alt="{{ testimonial.student_name }}"
+                                class="testimonial-avatar"
+                                loading="lazy">
+                        {% else %}
+                            <div class="testimonial-avatar-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        {% endif %}
+
+                        <div>
+                            <strong>{{ testimonial.student_name }}</strong>
+
+                            {% if testimonial.destination %}
+                                <small>{{ testimonial.destination }}</small>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </article>
+            {% empty %}
+                <article class="testimonial-card">
+                    <i class="fas fa-quote-left testimonial-quote"></i>
+
+                    <p>
+                        Personalized guidance can help students better
+                        understand their options and plan their next steps.
+                    </p>
+
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div>
+                            <strong>Student Feedback</strong>
+                            <small>Student experience</small>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= CALL TO ACTION ================= -->
+<section class="cta-section">
+    <div class="container cta-container">
+
+        <div>
+            <span class="section-tag">YOUR NEXT CHAPTER</span>
+            <h2>Ready to Take the Next Step?</h2>
+            <p>
+                Let's discuss your study plans and explore the options
+                available for your future.
+            </p>
+        </div>
+
+        <a href="#contact" class="btn btn-primary">
+            Start Your Journey
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+</section>
+
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="section contact-section" id="contact">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">GET IN TOUCH</span>
+            <h2>Let's Talk About Your Future</h2>
+            <p>
+                Have a question about studying abroad? Send me a message
+                and let's discuss your plans.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+
+            <!-- CONTACT INFORMATION -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+
+                <p>
+                    Reach out for information about study destinations,
+                    courses, applications, and education counselling.
+                </p>
+
+                {% if site and site.email %}
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+
+                        <div>
+                            <small>Email</small>
+                            <a href="mailto:{{ site.email }}">
+                                {{ site.email }}
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if site and site.phone %}
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </span>
+
+                        <div>
+                            <small>Phone</small>
+                            <a href="tel:{{ site.phone }}">
+                                {{ site.phone }}
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if site and site.whatsapp %}
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </span>
+
+                        <div>
+                            <small>WhatsApp</small>
+                            <a href="https://wa.me/{{ site.whatsapp|cut:' '|cut:'+'|cut:'-'|cut:'(' |cut:')' }}"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if site and site.address %}
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </span>
+
+                        <div>
+                            <small>Location</small>
+                            <p>{{ site.address }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="contact-note">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>
+                        Prepare your questions before your consultation
+                        so we can make the most of our conversation.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- CONTACT FORM -->
+            <div class="contact-form-wrapper">
+                <h3>Send a Message</h3>
+
+                <form method="POST"
+                      action="{% url 'home' %}"
+                      class="contact-form">
+
+                    {% csrf_token %}
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                maxlength="150"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            maxlength="30">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interested_destination">
+                            Interested Destination / Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="interested_destination"
+                            name="interested_destination"
+                            placeholder="e.g. Australia, Canada, UK"
+                            maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell me about your study plans..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary submit-btn">
+                        Send Message
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container footer-container">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo footer-logo">
+                <span class="logo-mark">BB</span>
+
+                <span class="logo-text">
+                    <strong>
+                        {% if site %}{{ site.name }}{% else %}Bikash Belbase{% endif %}
+                    </strong>
+
+                    <small>
+                        {% if site %}{{ site.position }}{% else %}Education Consultant{% endif %}
+                    </small>
+                </span>
+            </a>
+
+            <p>
+                Helping students make informed decisions about
+                international education opportunities.
+            </p>
+
+            {% if site and site.whatsapp %}
+                <a href="https://wa.me/{{ site.whatsapp|cut:' '|cut:'+'|cut:'-'|cut:'('|cut:')' }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Contact on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            {% endif %}
+
+        </div>
+
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-links">
+            <h4>Explore</h4>
+            <a href="#experience">Experience</a>
+            <a href="#success">Success Stories</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#home">Back to Top</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>
+                &copy; {% now "Y" %}
+                {% if site %}{{ site.name }}{% else %}Bikash Belbase{% endif %}.
+                All rights reserved.
+            </p>
+
+            <p>Designed with purpose. Built for your future.</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script src="{% static 'js/script.js' %}"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.getElementById("navbar");
+
+    if (menuToggle && navbar) {
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navbar.classList.toggle("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            const icon = menuToggle.querySelector("i");
+
+            if (icon) {
+                icon.classList.toggle("fa-bars", !isOpen);
+                icon.classList.toggle("fa-times", isOpen);
+            }
+        });
+
+        navbar.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navbar.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                const icon = menuToggle.querySelector("i");
+
+                if (icon) {
+                    icon.classList.add("fa-bars");
+                    icon.classList.remove("fa-times");
+                }
+            });
+        });
+    }
+});
+</script>
+
+</body>
+</html>
